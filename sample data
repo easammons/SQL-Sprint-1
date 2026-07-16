@@ -1,0 +1,35 @@
+
+-- Sample data: 3 weeks of a push/pull/legs split
+INSERT INTO workouts (workout_date, exercise, sets, reps, weight, notes) VALUES
+-- Week 1
+('2026-06-24', 'Bench Press', 4, 8, 135.0, 'Felt good'),
+('2026-06-24', 'Overhead Press', 3, 10, 65.0, NULL),
+('2026-06-24', 'Tricep Pushdown', 3, 12, 40.0, NULL),
+('2026-06-26', 'Deadlift', 4, 5, 185.0, 'PR attempt next week'),
+('2026-06-26', 'Pull-up', 4, 8, NULL, 'Bodyweight'),
+('2026-06-26', 'Barbell Row', 3, 10, 95.0, NULL),
+('2026-06-28', 'Squat', 4, 8, 155.0, 'Knees felt a bit tight'),
+('2026-06-28', 'Leg Press', 3, 12, 220.0, NULL),
+('2026-06-28', 'Calf Raise', 4, 15, 90.0, NULL),
+ 
+-- Week 2
+('2026-07-01', 'Bench Press', 4, 8, 140.0, 'Progress!'),
+('2026-07-01', 'Overhead Press', 3, 10, 67.5, NULL),
+('2026-07-01', 'Tricep Pushdown', 3, 12, 42.5, NULL),
+('2026-07-03', 'Deadlift', 4, 5, 195.0, 'New PR'),
+('2026-07-03', 'Pull-up', 4, 9, NULL, 'Bodyweight'),
+('2026-07-03', 'Barbell Row', 3, 10, 100.0, NULL),
+('2026-07-05', 'Squat', 4, 8, 160.0, NULL),
+('2026-07-05', 'Leg Press', 3, 12, 230.0, NULL),
+('2026-07-05', 'Calf Raise', 4, 15, 90.0, 'Slow tempo'),
+ 
+-- Week 3
+('2026-07-08', 'Bench Press', 4, 8, 142.5, NULL),
+('2026-07-08', 'Overhead Press', 3, 9, 70.0, 'Tough set'),
+('2026-07-08', 'Tricep Pushdown', 3, 12, 42.5, NULL),
+('2026-07-10', 'Deadlift', 3, 5, 200.0, 'Grip starting to give out'),
+('2026-07-10', 'Pull-up', 4, 9, NULL, 'Bodyweight'),
+('2026-07-10', 'Barbell Row', 3, 10, 100.0, NULL),
+('2026-07-13', 'Squat', 4, 8, 165.0, NULL),
+('2026-07-13', 'Leg Press', 3, 12, 240.0, NULL),
+('2026-07-13', 'Calf Raise', 4, 15, 95.0, NULL);
