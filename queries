@@ -37,3 +37,24 @@ SELECT * FROM workouts WHERE exercise = 'Squat';
  
 -- Workouts in a date range
 SELECT * FROM workouts WHERE workout_date >= '2026-07-01';
+
+UPDATE workouts
+SET weight = 145.0
+WHERE workout_date = '2026-07-08' AND exercise = 'Bench Press';
+
+
+UPDATE workouts
+SET notes = 'Added later: form felt off on last rep'
+WHERE id = 5;
+ 
+-- Verify the update took effect
+SELECT * FROM workouts WHERE workout_date = '2026-07-08' AND exercise = 'Bench Press';
+
+DELETE FROM workouts WHERE id = 27;
+ 
+-- Example: remove all workouts for an exercise you stopped doing
+DELETE FROM workouts WHERE exercise = 'Calf Raise';
+ 
+-- Verify the delete took effect
+SELECT * FROM workouts WHERE exercise = 'Calf Raise';
+
