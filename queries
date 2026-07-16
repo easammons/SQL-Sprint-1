@@ -58,3 +58,27 @@ DELETE FROM workouts WHERE exercise = 'Calf Raise';
 -- Verify the delete took effect
 SELECT * FROM workouts WHERE exercise = 'Calf Raise';
 
+
+-- Average weight lifted per exercise
+SELECT exercise, AVG(weight) AS avg_weight
+FROM workouts
+WHERE weight IS NOT NULL
+GROUP BY exercise;
+ 
+-- Number of times each exercise was logged
+SELECT exercise, COUNT(*) AS times_logged
+FROM workouts
+GROUP BY exercise
+ORDER BY times_logged DESC;
+ 
+-- Combine multiple aggregates in one summary query per exercise
+SELECT
+    exercise,
+    COUNT(*) AS times_logged,
+    AVG(weight) AS avg_weight,
+    MAX(weight) AS max_weight,
+    SUM(sets * reps * COALESCE(weight, 0)) AS total_volume
+FROM workouts
+GROUP BY exercise
+ORDER BY exercise;
+
