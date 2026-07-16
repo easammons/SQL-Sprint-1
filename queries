@@ -1,0 +1,39 @@
+-- All workouts
+SELECT * FROM workouts;
+ 
+-- Total training volume per week (sets * reps * weight)
+-- Bodyweight exercises (NULL weight) count as 0
+SELECT
+    strftime('%Y-W%W', workout_date) AS week,
+    SUM(sets * reps * COALESCE(weight, 0)) AS total_volume
+FROM workouts
+GROUP BY week
+ORDER BY week;
+ 
+-- Volume per exercise per week
+SELECT
+    strftime('%Y-W%W', workout_date) AS week,
+    exercise,
+    SUM(sets * reps * COALESCE(weight, 0)) AS volume
+FROM workouts
+GROUP BY week, exercise
+ORDER BY week, exercise;
+ 
+-- Total volume per week, excluding bodyweight movements
+SELECT
+    strftime('%Y-W%W', workout_date) AS week,
+    SUM(sets * reps * weight) AS total_volume
+FROM workouts
+WHERE weight IS NOT NULL
+GROUP BY week;
+ 
+-- Max weight lifted per exercise (progression tracking)
+SELECT exercise, MAX(weight) AS max_weight
+FROM workouts
+GROUP BY exercise;
+ 
+-- All workouts for a specific exercise
+SELECT * FROM workouts WHERE exercise = 'Squat';
+ 
+-- Workouts in a date range
+SELECT * FROM workouts WHERE workout_date >= '2026-07-01';
