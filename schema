@@ -1,0 +1,12 @@
+chema · SQL
+-- Creates the workouts table
+CREATE TABLE workouts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    workout_date DATE NOT NULL,
+    exercise VARCHAR(50) NOT NULL,
+    sets INTEGER,
+    reps INTEGER,
+    weight DECIMAL(5,2),
+    notes TEXT
+);
+ 
